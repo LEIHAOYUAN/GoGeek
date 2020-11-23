@@ -2,6 +2,7 @@ package main
 
 /*
 如要等待多个任务结束，推荐使用sync.WaitGroup。通过设定计数器，让每个goroutine在退出前递减，直至归零时解除阻塞。
+尽管WaitGroup.Add实现了原子操作，但建议在goroutine外累加计数器，以免Add尚未执行，Wait已经退出。
 */
 import (
 	"sync"
