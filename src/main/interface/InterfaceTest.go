@@ -14,6 +14,15 @@ import "fmt"
 
 */
 
+func main() {
+	var o valueable
+	o = stockPosition{"GOOG", 577.20, 4}
+	showValue(o)
+	var t f
+	o = t
+	showValue(o)
+}
+
 type valueable interface {
 	getValue() float32
 }
@@ -39,13 +48,4 @@ func (s f) getValue() float32 {
 
 func showValue(val valueable) {
 	fmt.Printf("value of the asset is %f\n", val.getValue())
-}
-
-func main() {
-	var o valueable
-	o = stockPosition{"GOOG", 577.20, 4}
-	showValue(o)
-	var t f
-	o = t
-	showValue(o)
 }
